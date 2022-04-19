@@ -27,7 +27,7 @@ const App = () => {
   ]);
 
   const addExpenseHandler = (expenseData) => {
-    updateExpenses((arr) => [...expenses, expenseData]);
+    updateExpenses(previousExpenses => [expenseData, ...expenses ]);
   };
 
   return (
