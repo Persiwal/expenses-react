@@ -21,16 +21,18 @@ const Expenses = (props) => {
         selected={selectedYear}
         onSaveExpensesYear={saveExpensesYearHandler}
       />
-      {filteredExpenses.map((item) => {
-        return (
-          <ExpenseItem
-            key={item.id}
-            title={item.title}
-            amount={item.amount}
-            date={item.date}
-          ></ExpenseItem>
-        );
-      })};
+      {filteredExpenses.length === 0 && <p>No expenses found.</p>}
+      {filteredExpenses.length > 0 &&
+        filteredExpenses.map((item) => {
+          return (
+            <ExpenseItem
+              key={item.id}
+              title={item.title}
+              amount={item.amount}
+              date={item.date}
+            ></ExpenseItem>
+          );
+        })}
     </div>
   );
 };
