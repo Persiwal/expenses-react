@@ -27,12 +27,11 @@ const App = () => {
   ]);
 
   const addExpenseHandler = (expenseData) => {
-    updateExpenses(previousExpenses => [expenseData, ...expenses ]);
+    updateExpenses((previousExpenses) => [expenseData, ...expenses]);
   };
 
   return (
     <div>
-      <h2>Let's get started!s</h2>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses}></Expenses>
     </div>
